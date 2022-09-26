@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1482.0" style="-fx-background-color: dimgray;" stylesheets="@New%20Text%20Document.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+	<right>
+		<AnchorPane prefHeight="895.0" prefWidth="179.0" style="-fx-background-color: lightblue; -fx-padding: 0;" BorderPane.alignment="CENTER">
+			<children>
+				<Label alignment="CENTER" contentDisplay="CENTER" layoutX="11.0" layoutY="301.0" prefHeight="30.0" prefWidth="64.0" text="Source: ">
+					<font>
+						<Font name="System Bold" size="15.0" />
+					</font>
+				</Label>
+				<Label alignment="CENTER" layoutX="12.0" layoutY="338.0" prefHeight="30.0" prefWidth="61.0" text="Target: ">
+					<font>
+						<Font name="System Bold" size="15.0" />
+					</font>
+				</Label>
+				<Button fx:id="Generate" alignment="CENTER" defaultButton="true" layoutX="5.0" layoutY="170.0" mnemonicParsing="false" onAction="#Generate" prefHeight="52.0" prefWidth="170.0" style="-fx-background-color: #008CBA; -fx-background-radius: 16; -fx-background-insets: 4;" styleClass="shiny-orange" text="Generate" textFill="WHITE">
+					<font>
+						<Font name="System Bold" size="20.0" />
+					</font>
+               <graphic>
+                  <ImageView cache="true" depthTest="DISABLE" fitHeight="36.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@bgposssssspf.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+				</Button>
+            <Button cancelButton="true" contentDisplay="CENTER" layoutX="23.0" layoutY="714.0" mnemonicParsing="false" onAction="#clear" prefHeight="71.0" prefWidth="134.0" style="-fx-background-color: #008CBA; -fx-background-insets: 15; -fx-label-padding: 10; -fx-border-insets: 10; -fx-background-radius: 16;" styleClass="shiny-orange" text="clear-all" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+				<TextField fx:id="pathCost" layoutX="32.0" layoutY="548.0" prefHeight="27.0" prefWidth="120.0" style="-fx-border-color: #FFA419; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <TextField fx:id="Source" layoutX="72.0" layoutY="302.0" prefHeight="27.0" prefWidth="85.0" style="-fx-border-color: #FFA419; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <TextField fx:id="target" layoutX="72.0" layoutY="339.0" prefHeight="27.0" prefWidth="85.0" style="-fx-border-color: #FFA419; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <TextField fx:id="Rseed" layoutX="72.0" layoutY="106.0" prefHeight="27.0" prefWidth="85.0" style="-fx-border-color: #FFA419; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <Label alignment="CENTER" layoutX="18.0" layoutY="66.0" prefHeight="30.0" prefWidth="61.0" text="Size:">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="104.0" prefHeight="30.0" prefWidth="57.0" text="R seed:" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="size" layoutX="72.0" layoutY="68.0" prefHeight="27.0" prefWidth="85.0" style="-fx-border-color: #FFA419; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <Separator layoutX="5.0" layoutY="245.0" prefHeight="4.0" prefWidth="170.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="29.0" layoutY="511.0" prefHeight="30.0" prefWidth="122.0" text="Total Path Cost:">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="run" alignment="CENTER" contentDisplay="TOP" defaultButton="true" layoutX="11.0" layoutY="387.0" mnemonicParsing="false" onAction="#run" prefHeight="87.0" prefWidth="157.0" style="-fx-background-color: #008CBA; -fx-background-radius: 16; -fx-background-insets: 4;" styleClass="shiny-orange" text="Compute Cost" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView cache="true" depthTest="DISABLE" fitHeight="62.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@routing-icon-8.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button cancelButton="true" contentDisplay="CENTER" layoutX="25.0" layoutY="613.0" mnemonicParsing="false" onAction="#clearl" prefHeight="71.0" prefWidth="134.0" style="-fx-background-color: #008CBA; -fx-background-insets: 15; -fx-label-padding: 10; -fx-border-insets: 10; -fx-background-radius: 16;" styleClass="shiny-orange" text="clear" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Label fx:id="LLL" layoutX="17.0" layoutY="267.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+			</children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+		</AnchorPane>
+	</right>
+   <top>
+      <VBox alignment="CENTER" prefHeight="103.0" prefWidth="1293.0" style="-fx-background-color: lightblue; -fx-border-color: #008CBA; -fx-border-width: 0 0 3 0;" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <AnchorPane prefHeight="95.0" prefWidth="1022.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="423.0" layoutY="16.0" prefHeight="64.0" prefWidth="350.0" style="-fx-background-color: #ffffff; -fx-border-color: #008CBA; -fx-border-width: 3; -fx-border-radius: 40; -fx-background-radius: 45;" styleClass="p" text="Network Routing">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Label>
+                  <ImageView fitHeight="95.0" fitWidth="226.0" layoutX="1214.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@routing-icon-6G.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="pane" prefHeight="887.0" prefWidth="1100.0" style="-fx-background-color: #ADE0F3;" VBox.vgrow="NEVER" />
+            <SplitPane prefHeight="10.0" prefWidth="1100.0" style="-fx-border-color: gray; -fx-border-width: 2;">
+               <items>
+                  <Label fx:id="showTown" prefHeight="0.0" prefWidth="250.0" />
+               </items>
+            </SplitPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
